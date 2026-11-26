@@ -54,6 +54,7 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 | `TabItem` | State = Active / Inactive; text prop `Label`; instance-swap `Icon` | Active = coral pill (`bg/accent-subtle`) + Fill icon + medium coral label; min height 48 |
 | `TabBar` | Language = English (LTR) / Hebrew (RTL) | 360 wide, 5 tabs (Home, Explore, Checklist, Community, Profile / בית, גילוי, רשימה, קהילה, פרופיל); Hebrew is mirrored |
 | `BottomSheet` | text prop `Title`; booleans `Show header`, `Show footer`; instance-swap `Content` (`SheetContent/Placeholder`, `SheetContent/Filters`) | 360 wide, top radius 24, drag handle, 48×48 close button, footer = Reset (secondary) + Apply (primary); used for filters, reminders, report, directions chooser |
+| `TextField` | State = Default / Focused / Filled / Error / Disabled; text props `Label`, `Text`, `Helper`; booleans `Show label`, `Show helper`, `Show icon`; instance-swap `Icon` | Label always above (no floating labels), min height 48, radius 12; Focused = 2px `border/focus`, Error = 2px `status/error` + message in Helper |
 | `ListingCard` | text props `Title`, `Meta`, `Session`; instance-swap `Save icon` (heart / heart-fill); nested Badge instances | Image area uses `bg/brand-peach` as placeholder; save button top-end (top-left in RTL) |
 
 ## Icons — Phosphor (MIT)
@@ -64,7 +65,9 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 - **RTL:** directional icons (`caret-*`, `arrow-left`, `navigation-arrow`) must be mirrored in Hebrew; all others stay as-is.
 - **Code:** `phosphor-react-native` (same names, `weight="regular" | "fill"`), colored from theme tokens. Need a new icon? Pick it from phosphoricons.com and add it to both Figma and this list.
 
-Not yet built: TextField, EmptyState.
+Not yet built: EmptyState.
+
+Example frame **"Example / Text fields"** shows sign-up email (focused), wrong code (error), area search (icon, no label), a Hebrew field (right-aligned), and a disabled field.
 
 Example frame **"Example / Filters sheet"** shows the sheet over a 40% black scrim. The scrim is a raw color for now — add an `overlay/scrim` token when the token format supports alpha.
 
