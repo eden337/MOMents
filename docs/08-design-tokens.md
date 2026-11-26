@@ -40,3 +40,17 @@ All text/UI pairs listed in `tokens.json` were checked against WCAG 2.1 AA in bo
 4. Touch targets ≥ `size/touch-target` (48).
 5. Use text styles for all text; don't override size or weight locally.
 6. Need a new color? Add it to `tokens.json` first (primitive + semantic for **both** themes), then Figma.
+
+## Core components (Figma page "Components")
+
+All fills, strokes, padding, gaps and radii are bound to the variables above.
+
+| Component | Variants / properties | Notes |
+|---|---|---|
+| `Button` | Variant = Primary / Secondary / Ghost × State = Default / Pressed / Disabled; text prop `Label` | Min height 48 (touch target), full radius |
+| `Chip` | Selected = true / false; text prop `Label` | Visual height ~36 — code adds hitSlop to reach 48 |
+| `Badge` | Type = Free / Verified / Outdated | Label is fixed per type |
+| `ChecklistItem` | Checked = true / false; text prop `Label` | Whole row is the tap target; checked = strikethrough + secondary text |
+| `ListingCard` | text props `Title`, `Meta`, `Session`; nested Badge instances | Image area uses `bg/brand-peach` as placeholder |
+
+Not yet built: icon set (save/heart, navigation, tab bar), BottomSheet, TextField, TabBar, EmptyState. A dark preview needs either the `Color (Dark)` variables swapped in or a Professional plan (modes).
