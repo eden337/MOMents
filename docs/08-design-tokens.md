@@ -51,6 +51,14 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 | `Chip` | Selected = true / false; text prop `Label` | Visual height ~36 — code adds hitSlop to reach 48 |
 | `Badge` | Type = Free / Verified / Outdated | Label is fixed per type |
 | `ChecklistItem` | Checked = true / false; text prop `Label` | Whole row is the tap target; checked = strikethrough + secondary text |
-| `ListingCard` | text props `Title`, `Meta`, `Session`; nested Badge instances | Image area uses `bg/brand-peach` as placeholder |
+| `ListingCard` | text props `Title`, `Meta`, `Session`; instance-swap `Save icon` (heart / heart-fill); nested Badge instances | Image area uses `bg/brand-peach` as placeholder; save button top-end (top-left in RTL) |
 
-Not yet built: icon set (save/heart, navigation, tab bar), BottomSheet, TextField, TabBar, EmptyState. A dark preview needs either the `Color (Dark)` variables swapped in or a Professional plan (modes).
+## Icons — Phosphor (MIT)
+
+- **Figma:** frame "Icons (Phosphor)" on the Components page — 40 components named `Icon/<name>`, 24×24, filled with `icon/default` (override with any `icon/*` token).
+- **Weight:** *Regular* everywhere; *Fill* only for the active bottom-tab state and the saved heart.
+- **Set:** house, map-trifold, check-square, users-three, user-circle (tabs, + fill versions) · heart (+ fill) · navigation-arrow, calendar-plus, bell, share-network, flag, phone, whatsapp-logo, facebook-logo, globe (listing actions) · magnifying-glass, sliders-horizontal, crosshair, map-pin, list, x, plus, trash, check, clock (UI) · caret-left/right, arrow-left (navigation) · baby, tree, music-notes, storefront, stethoscope, sun (categories / outing types).
+- **RTL:** directional icons (`caret-*`, `arrow-left`, `navigation-arrow`) must be mirrored in Hebrew; all others stay as-is.
+- **Code:** `phosphor-react-native` (same names, `weight="regular" | "fill"`), colored from theme tokens. Need a new icon? Pick it from phosphoricons.com and add it to both Figma and this list.
+
+Not yet built: BottomSheet, TextField, TabBar, EmptyState. A dark preview needs either the `Color (Dark)` variables swapped in or a Professional plan (modes).

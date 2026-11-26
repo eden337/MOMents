@@ -122,6 +122,7 @@ Scores: 1 (poor) – 5 (excellent) **for this team** (1 designer + 1 part-time R
 | Forms & validation | react-hook-form + Zod (schemas shared with admin) | One source of validation rules |
 | Styling | NativeWind (Tailwind for RN) driven by generated design tokens; `dark:` and `rtl:` variants | Designer-friendly naming, dark mode + RTL built in |
 | i18n | i18next + react-i18next + expo-localization; ICU plurals; Hebrew default | Proven, supports gendered/plural forms |
+| Icons | `phosphor-react-native` (Phosphor, MIT) — matches the Figma icon set | Consistent with design; regular + fill weights |
 | Lists | FlashList | Smooth scrolling on mid-range Android |
 | Map clustering | supercluster (client-side) | Dataset is small (hundreds of pins) |
 | Images | expo-image (caching); uploads resized client-side before upload | Avoids paid image-transformation features |
