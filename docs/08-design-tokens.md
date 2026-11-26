@@ -75,3 +75,11 @@ Example frame **"Example / Text fields"** shows sign-up email (focused), wrong c
 Example frame **"Example / Filters sheet"** shows the sheet over a 40% black scrim. The scrim is a raw color for now — add an `overlay/scrim` token when the token format supports alpha.
 
 > Hebrew tab labels are placeholders for the designer to confirm (e.g. "גילוי" vs "מפה" for Explore). A dark preview needs either the `Color (Dark)` variables swapped in or a Professional plan (modes).
+
+## Screens in Figma
+
+| Page | Frames | Notes |
+|---|---|---|
+| Explore | `Explore / Map` (EX-01), `Explore / List` (EX-02) — 360×800 Android | First layout draft built from library instances. Local components on the page: `MapPin` (Selected, swappable category icon), `MapCluster` (count), `ListingCard/Compact` (selected-pin card), `FloatingPill` (Map ⇄ List toggle), `IconButton` (Outlined = filters, Floating = locate me) |
+
+Open design questions on Explore: list-card image height (160 shows ~1.5 cards — consider 120), whether the filter button shows an active-filter count, and Hebrew/RTL versions of both frames.
