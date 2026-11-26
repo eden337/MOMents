@@ -16,6 +16,7 @@ MOMents is a mobile companion for mothers of babies and young children: discover
 | 05 | [Security & Privacy](05-security-privacy.md) | Security & privacy (12), legal/store checklist |
 | 06 | [Roadmap & Risks](06-roadmap.md) | Roadmap (13), complexity estimates (14), risks (15) |
 | 07 | [Content Operations](07-content-operations.md) | Realistic data collection & verification strategy for activities |
+| 08 | [Design Tokens](08-design-tokens.md) | Token system, Figma variables, accessibility decisions ([`design/tokens.json`](../design/tokens.json)) |
 
 ## Decision log (agreed in the planning session)
 
