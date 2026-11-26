@@ -276,6 +276,7 @@ Most data access uses Supabase's auto-generated REST API (via `supabase-js`), pr
 - Content fields that admins write are `jsonb` objects: `{ "he": "…", "en": "…" }`; the app shows the user's language and falls back to Hebrew.
 - Dates/times via `Intl` with `Asia/Jerusalem`; weekday names and number formats localized; week starts on Sunday in Hebrew locale.
 - RTL: `I18nManager.allowRTL(true)`; on language change call `I18nManager.forceRTL(isRTL)` then reload (`expo-updates` `reloadAsync`). All styles use logical properties; a CI lint rule bans `marginLeft/Right`, `paddingLeft/Right`, `left/right` in app code.
+- Numeric ranges and times in Hebrew ("0–12", "10:00–10:45") must be bidi-safe: a shared `formatRange()` helper inserts U+200E around the dash; covered by unit tests.
 - Gendered Hebrew copy handled by i18next context (`_female`/`_neutral`) so tone can change without code changes.
 
 ## 10. Performance & quality budgets

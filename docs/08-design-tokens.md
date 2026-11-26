@@ -80,6 +80,13 @@ Example frame **"Example / Filters sheet"** shows the sheet over a 40% black scr
 
 | Page | Frames | Notes |
 |---|---|---|
-| Explore | `Explore / Map` (EX-01), `Explore / List` (EX-02) — 360×800 Android | First layout draft built from library instances. Local components on the page: `MapPin` (Selected, swappable category icon), `MapCluster` (count), `ListingCard/Compact` (selected-pin card), `FloatingPill` (Map ⇄ List toggle), `IconButton` (Outlined = filters, Floating = locate me) |
+| Screens (formerly Explore) | `Explore / Map` (EX-01), `Explore / List` (EX-02) — 360×800 Android | First layout draft built from library instances. Local components on the page: `MapPin` (Selected, swappable category icon), `MapCluster` (count), `ListingCard/Compact` (selected-pin card), `FloatingPill` (Map ⇄ List toggle), `IconButton` (Outlined = filters, Floating = locate me) |
 
-Open design questions on Explore: list-card image height (160 shows ~1.5 cards — consider 120), whether the filter button shows an active-filter count, and Hebrew/RTL versions of both frames.
+| Screens | `Listing details / English (LTR)` and `Listing details / Hebrew (RTL)` (EX-06), full-length scroll frames | Photo carousel with floating back/share/save; title block + Verified badge; `FactTile` ×3 (age, price, distance); `AmenityTag`s; Next sessions (`SessionRow` with reminder bell); About; Location mini-map; Contact (`ContactRow`); verification date + Report link; sticky action bar = add-to-calendar + **Directions** (primary). Tab bar hidden on details |
+
+Decisions applied: list-card photo height 120; filter button shows an active-filter count badge (`IconButton` → `Show count`); Hebrew versions are built for key screens only (Explore, Details, Home).
+
+> Figma Starter plan allows 3 pages: Foundations, Components, Screens. All screens live on the "Screens" page.
+
+### RTL rule: number ranges
+In Hebrew, an en dash between numbers is reordered by the bidi algorithm ("0–12" renders as "12–0", "10:00–10:45" as "10:45–10:00"). In Figma, wrap the dash with left-to-right marks (U+200E): `0\u200E–\u200E12`. **In code**, format ranges with a helper that inserts LRM (or wraps numbers in U+2066…U+2069 isolates) and test every range string in Hebrew. Prices in Hebrew read naturally as "מ־60 ₪".
