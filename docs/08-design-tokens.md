@@ -51,6 +51,8 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 | `Chip` | Selected = true / false; text prop `Label` | Visual height ~36 — code adds hitSlop to reach 48 |
 | `Badge` | Type = Free / Verified / Outdated | Label is fixed per type |
 | `ChecklistItem` | Checked = true / false; text prop `Label` | Whole row is the tap target; checked = strikethrough + secondary text |
+| `TabItem` | State = Active / Inactive; text prop `Label`; instance-swap `Icon` | Active = coral pill (`bg/accent-subtle`) + Fill icon + medium coral label; min height 48 |
+| `TabBar` | Language = English (LTR) / Hebrew (RTL) | 360 wide, 5 tabs (Home, Explore, Checklist, Community, Profile / בית, גילוי, רשימה, קהילה, פרופיל); Hebrew is mirrored |
 | `ListingCard` | text props `Title`, `Meta`, `Session`; instance-swap `Save icon` (heart / heart-fill); nested Badge instances | Image area uses `bg/brand-peach` as placeholder; save button top-end (top-left in RTL) |
 
 ## Icons — Phosphor (MIT)
@@ -61,4 +63,6 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 - **RTL:** directional icons (`caret-*`, `arrow-left`, `navigation-arrow`) must be mirrored in Hebrew; all others stay as-is.
 - **Code:** `phosphor-react-native` (same names, `weight="regular" | "fill"`), colored from theme tokens. Need a new icon? Pick it from phosphoricons.com and add it to both Figma and this list.
 
-Not yet built: BottomSheet, TextField, TabBar, EmptyState. A dark preview needs either the `Color (Dark)` variables swapped in or a Professional plan (modes).
+Not yet built: BottomSheet, TextField, EmptyState.
+
+> Hebrew tab labels are placeholders for the designer to confirm (e.g. "גילוי" vs "מפה" for Explore). A dark preview needs either the `Color (Dark)` variables swapped in or a Professional plan (modes).
