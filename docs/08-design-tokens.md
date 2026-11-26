@@ -84,6 +84,10 @@ Example frame **"Example / Filters sheet"** shows the sheet over a 40% black scr
 
 | Screens | `Listing details / English (LTR)` and `Listing details / Hebrew (RTL)` (EX-06), full-length scroll frames | Photo carousel with floating back/share/save; title block + Verified badge; `FactTile` ×3 (age, price, distance); `AmenityTag`s; Next sessions (`SessionRow` with reminder bell); About; Location mini-map; Contact (`ContactRow`); verification date + Report link; sticky action bar = add-to-calendar + **Directions** (primary). Tab bar hidden on details |
 
+| Screens | `Home / English (LTR)` and `Home / Hebrew (RTL)` (HO-01), full-length frames | Peach greeting header (name + child age + area); **Happening today near you** carousel (ListingCard 264 wide, next card peeks); **Packing for an outing?** = `ResumeCard` (progress bar) + `OutingTile`s; **Your saved classes this week** (`SessionRow` with reminder bell); **Groups for you** (`GroupRow`); TabBar with Home active. New local components: `SectionHeader`, `OutingTile`, `ResumeCard`, `GroupRow` (LTR/RTL); `ListingCard (RTL)` on the Components page |
+
+**Known issue (fix by hand, see below):** on the English Home carousel the save heart is hidden — the card is narrowed to 264 but its save button is positioned from the left. Fix: in the `ListingCard` main component select *Save button* → Constraints: **Right**; in `ListingCard (RTL)` → **Left**. Then nudge each carousel card's width (e.g. 265 → 264) so the instances re-layout.
+
 Decisions applied: list-card photo height 120; filter button shows an active-filter count badge (`IconButton` → `Show count`); Hebrew versions are built for key screens only (Explore, Details, Home).
 
 > Figma Starter plan allows 3 pages: Foundations, Components, Screens. All screens live on the "Screens" page.
