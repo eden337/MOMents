@@ -55,6 +55,7 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 | `TabBar` | Language = English (LTR) / Hebrew (RTL) | 360 wide, 5 tabs (Home, Explore, Checklist, Community, Profile / בית, גילוי, רשימה, קהילה, פרופיל); Hebrew is mirrored |
 | `BottomSheet` | text prop `Title`; booleans `Show header`, `Show footer`; instance-swap `Content` (`SheetContent/Placeholder`, `SheetContent/Filters`) | 360 wide, top radius 24, drag handle, 48×48 close button, footer = Reset (secondary) + Apply (primary); used for filters, reminders, report, directions chooser |
 | `TextField` | State = Default / Focused / Filled / Error / Disabled; text props `Label`, `Text`, `Helper`; booleans `Show label`, `Show helper`, `Show icon`; instance-swap `Icon` | Label always above (no floating labels), min height 48, radius 12; Focused = 2px `border/focus`, Error = 2px `status/error` + message in Helper |
+| `EmptyState` | Tone = Peach / Blue / Mint / Coral; text props `Title`, `Body`; instance-swap `Icon`; booleans `Show primary`, `Show secondary` (nested buttons exposed for label edits) | Peach = default, Blue = saved/personal, Mint = success/community, Coral = error/offline. Always offer a next step |
 | `ListingCard` | text props `Title`, `Meta`, `Session`; instance-swap `Save icon` (heart / heart-fill); nested Badge instances | Image area uses `bg/brand-peach` as placeholder; save button top-end (top-left in RTL) |
 
 ## Icons — Phosphor (MIT)
@@ -65,7 +66,9 @@ All fills, strokes, padding, gaps and radii are bound to the variables above.
 - **RTL:** directional icons (`caret-*`, `arrow-left`, `navigation-arrow`) must be mirrored in Hebrew; all others stay as-is.
 - **Code:** `phosphor-react-native` (same names, `weight="regular" | "fill"`), colored from theme tokens. Need a new icon? Pick it from phosphoricons.com and add it to both Figma and this list.
 
-Not yet built: EmptyState.
+The core component set from doc 02 §5 is now complete in Figma. Still to design per screen: Skeleton loaders, Toast/Banner, Avatar, SegmentedControl, map pins/clusters.
+
+Example frame **"Example / Empty states"** shows Explore with no results, Saved with nothing saved, and Offline.
 
 Example frame **"Example / Text fields"** shows sign-up email (focused), wrong code (error), area search (icon, no label), a Hebrew field (right-aligned), and a disabled field.
 
